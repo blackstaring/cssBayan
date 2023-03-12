@@ -204,6 +204,12 @@ h2 {
   transition: all ease 0.3s;
 }
 
+@media (hover: hover) {
+  .accordion-item__icon .fa-plus {
+    opacity: 0;
+  }
+}
+
 @media (min-width: 820px) {
   .accordion-item__icon .fa-plus {
     font-size: 1.9rem;
@@ -237,7 +243,32 @@ h2 {
   }
 }
 
+.accordion:hover .accordion-item__icon .fa-plus {
+  opacity: 1;
+}
+
+.accordion:hover .accordion-item__title {
+  color: #385170;
+}
+
 input:checked + .accordion-item__label .accordion-item__image {
+  max-height: 100vh;
+  margin-bottom: 2rem;
+}
+
+.accordion-item:hover .accordion-item__label .accordion-item__title {
+  color: #385170;
+}
+
+.accordion-item:hover .accordion-item__label {
+  background: lightcoral;
+}
+
+.accordion-item:hover .accordion-item__label .accordion-item__icon .fa-plus {
+  transform: rotate(45deg);
+}
+
+.accordion-item:hover .accordion-item__label .accordion-item__image {
   max-height: 100vh;
   margin-bottom: 2rem;
 }
