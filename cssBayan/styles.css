@@ -251,24 +251,23 @@ h2 {
   color: #385170;
 }
 
-input:checked + .accordion-item__label .accordion-item__image {
-  max-height: 100vh;
-  margin-bottom: 2rem;
-}
-
-.accordion-item:hover .accordion-item__label .accordion-item__title {
+.accordion-item:hover .accordion-item__label .accordion-item__title,
+input:checked + .accordion-item__label .accordion-item__title {
   color: #385170;
 }
 
-.accordion-item:hover .accordion-item__label {
+.accordion-item:hover .accordion-item__label,
+input:checked + .accordion-item__label {
   background: lightcoral;
 }
 
-.accordion-item:hover .accordion-item__label .accordion-item__icon .fa-plus {
+.accordion-item:hover .accordion-item__label .accordion-item__icon .fa-plus,
+input:checked + .accordion-item__label .accordion-item__icon .fa-plus {
   transform: rotate(45deg);
 }
 
-.accordion-item:hover .accordion-item__label .accordion-item__image {
+.accordion-item:hover .accordion-item__label .accordion-item__image,
+input:checked + .accordion-item__label .accordion-item__image {
   max-height: 100vh;
   margin-bottom: 2rem;
 }
