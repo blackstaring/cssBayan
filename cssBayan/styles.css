@@ -1,0 +1,273 @@
+/* Normalizw */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active,
+a:focus,
+a:active {
+  outline: none;
+}
+
+a {
+  color: inherit;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* Base */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: #272727;
+  background: #ececec;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #1c416f;
+  margin-bottom: 3.2rem;
+}
+
+@media (min-width: 820px) {
+  h1 {
+    font-size: 3.6rem;
+    margin-bottom: 3.6rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  h1 {
+    font-size: 4.2rem;
+    margin-bottom: 4.8rem;
+  }
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+@media (min-width: 820px) {
+  h2 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Layout */
+.section__container {
+  padding: 0 1.6rem;
+  max-width: 6;
+  margin: 0 auto;
+}
+
+@media (min-width: 820px) {
+  .section__container {
+    padding: 0 3.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__container {
+    padding: 0;
+    max-width: 60%;
+  }
+}
+
+/* Accordion styles */
+.accordion__section {
+  padding: 1.6rem 0;
+}
+
+.accordion {
+  overflow: hidden;
+}
+
+.accordion-item {
+  width: 100%;
+  overflow: hidden;
+  border-top: 0.1rem solid #b5b5b6;
+}
+
+.accordion-item input {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+.accordion-item__label {
+  cursor: pointer;
+}
+
+.accordion-item__head {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1.2rem;
+}
+
+.accordion-item__title {
+  color: #385170;
+  transition: all ease 0.3s;
+}
+
+@media (hover: hover) {
+  .accordion-item__title {
+    color: #439f8a;
+  }
+}
+
+.accordion-item__icon .fa-plus {
+  font-size: 1.6rem;
+  color: #385170;
+  width: 1.6rem;
+  height: calc(1.9rem * 1.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.3s;
+}
+
+@media (hover: hover) {
+  .accordion-item__icon .fa-plus {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 820px) {
+  .accordion-item__icon .fa-plus {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .accordion-item__icon .fa-plus {
+    font-size: 2.1rem;
+  }
+}
+
+.accordion-item__image {
+  margin-top: 2rem;
+  max-height: 0;
+  color: lightblue;
+  transition: max-height cubic-bezier(0.6, 0.28, 0.44, 0.67) 0.4s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.accordion-item__image img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 560px) {
+  .accordion-item__image img {
+    width: 60%;
+  }
+}
+
+.accordion:hover .accordion-item__icon .fa-plus {
+  opacity: 1;
+}
+
+.accordion:hover .accordion-item__title {
+  color: #385170;
+}
+
+.accordion-item:hover .accordion-item__label .accordion-item__title,
+input:checked + .accordion-item__label .accordion-item__title {
+  color: #385170;
+}
+
+.accordion-item:hover .accordion-item__label,
+input:checked + .accordion-item__label {
+  background: lightcoral;
+}
+
+.accordion-item:hover .accordion-item__label .accordion-item__icon .fa-plus,
+input:checked + .accordion-item__label .accordion-item__icon .fa-plus {
+  transform: rotate(45deg);
+}
+
+.accordion-item:hover .accordion-item__label .accordion-item__image,
+input:checked + .accordion-item__label .accordion-item__image {
+  max-height: 100vh;
+  margin-bottom: 2rem;
+}
